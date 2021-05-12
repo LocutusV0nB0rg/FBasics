@@ -7,7 +7,7 @@
 # MineageBasics by DebuffPvP
 # * Set any messages in this configuration to "" to display nothing.
 
-# Version of the config file. Do not change this.
+# Version of the config file.
 config-version: 3
 
 # Duration in seconds for scheduled database cleanups, clears all outdated data to free up RAM and disk space.
@@ -134,7 +134,7 @@ antiglitch-enderpearls-factions: []
   #- "Rel:Member"
   #- "Rel:Recruit"
   #- "Wilderness"
-  #- "SafeZone"
+#- "SafeZone"
 #- "WarZone"
 # . . . You get the idea.
 
@@ -288,13 +288,13 @@ commands-modifiers:
   #        price: 2.50
 
   safepromote:
-    regex: "/(?!s($| ))(|mineagebasics:)(|f(b|(|action)basics) )s(|p|afepromote)(| .*)"
+    regex: "/(?!s($| ))(|mineagebasics:)(|mineage(b|(|action)basics) )s(|p|afepromote)(| .*)"
     alias: "/mineagebasics safepromote %2+"
 
   wilderness:
-    regex: "/(?!w($| ))(|mineagebasics:)(|f(b|(|action)basics) )w(|ild(|erness))(| .*)"
+    regex: "/(?!w($| ))(|mineagebasics:)(|mineage(b|(|action)basics) )(w|rtp)(|ild(|erness))(| .*)"
     alias: "/mineagebasics wilderness"
-    cooldown: 300
+    cooldown: 0
     warmup: 5
     warmup-cancel-on-damage: true
     warmup-cancel-on-move: true
