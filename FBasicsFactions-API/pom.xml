@@ -7,7 +7,7 @@
   <parent>
     <artifactId>FBasicsParent</artifactId>
     <groupId>org.originmc</groupId>
-    <version>${fbasics.version}</version>
+    <version>2.1.8</version>
   </parent>
 
   <artifactId>FBasicsFactions-API</artifactId>

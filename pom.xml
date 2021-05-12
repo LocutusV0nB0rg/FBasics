@@ -6,7 +6,7 @@
 
   <groupId>org.originmc</groupId>
   <artifactId>FBasicsParent</artifactId>
-  <version>${fbasics.version}</version>
+  <version>2.1.8</version>
   <description>Supplies features most faction servers will require.</description>
   <packaging>pom</packaging>
 
