@@ -69,14 +69,7 @@ public final class WildernessTask implements Runnable {
                     int y = factionsTask.getY();
                     int z = factionsTask.getZ();
                     Bukkit.getScheduler().runTask(plugin,
-                            new TeleportTask(player, new Location(world, x + 0.5, y + 0.5, z + 0.5)));
-
-                    // Inform the player the teleportation was a success.
-                    MessageUtils.sendMessage(player, settings.getSuccessMessage()
-                            .replace("{x}", "" + x)
-                            .replace("{y}", "" + y)
-                            .replace("{z}", "" + z)
-                            .replace("{world}", world.getName()));
+                            new WildernessTeleportTask(player, new Location(world, x + 0.5, y + 0.5, z + 0.5), settings));
 
                     // Stop looking for any new locations.
                     cancel();
