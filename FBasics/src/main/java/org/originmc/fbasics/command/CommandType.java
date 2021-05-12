@@ -16,7 +16,7 @@ public enum CommandType {
 
     VERSION(CmdVersion.class, new String[]{"version", "v"}),
 
-    WILDERNESS(CmdWilderness.class, new String[]{"wilderness", "wild", "w"});
+    WILDERNESS(CmdWilderness.class, new String[]{"wilderness", "wild", "rtp"});
 
     private static final HashMap<String, CommandType> BY_ALIAS = new HashMap<>();
 

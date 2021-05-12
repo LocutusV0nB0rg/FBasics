@@ -6,10 +6,9 @@ author: Sudzzy
 softdepend: [Vault, Factions, MassiveCore, MVdWPlaceholderAPI]
 
 commands:
-  factionbasics:
-    aliases: [fbasics, fb]
+  mineagebasics:
     description: "FBasics' core command."
-    usage: "§cUsage: /fbasics <reload|version|safepromote|wilderness>"
+    usage: "§cUSAGE: /fbasics <reload|version|safepromote|wilderness>"
     permission: fbasics.user
     permission-message: "§cYou do not have permission to use that command."
 

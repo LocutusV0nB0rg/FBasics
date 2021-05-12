@@ -1,13 +1,10 @@
-####################################################
-#  ___        _   _          ___          _        #
-# | __|_ _ __| |_(_)___ _ _ | _ ) __ _ __(_)__ ___ #
-# | _/ _` / _|  _| / _ \ ' \| _ \/ _` (_-< / _(_-< #
-# |_|\__,_\__|\__|_\___/_||_|___/\__,_/__/_\__/__/ #
-#                                                  #
-# ------------------------------------------------ #
-#  Supplies features most faction servers require. #
-####################################################
-# * Version 2.1.8 by DebuffPvP
+######################
+#
+#   SETTINGS
+#
+######################
+
+# MineageBasics by DebuffPvP
 # * Set any messages in this configuration to "" to display nothing.
 
 # Version of the config file. Do not change this.
@@ -19,25 +16,21 @@ database-clean: 300
 # Duration in seconds for scheduled database saves, in case of crashes. Set to -1 to disable.
 database-save: 300
 
-# The factions version to attempt to support, normally FBasics is able to automatically find which factions version you
+# The factions version to attempt to support, normally MineageBasics is able to automatically find which factions version you
 # are using. If you are using some obscure factions which I have not attempted to account for which is based off another
 # build of factions then feel free to change this. Supported versions: "auto", "none", "2.7", "2.6", "1.8", "1.6".
-# Factions 2.8 naturally is supported as the API FBasics requires is the same as Factions 2.7.
+# Factions 2.8 naturally is supported as the API MineageBasics requires is the same as Factions 2.7.
 factions-version: "auto"
 
 # Should this plugin update the configuration? False will warn you in console when the configuration needs updating.
 # This is recommended to be set to true.
 update-config: true
 
-##########################################
-#    _       _   _  ___ _ _ _      _     #
-#   /_\  _ _| |_(_)/ __| (_) |_ __| |_   #
-#  / _ \| ' \  _| | (_ | | |  _/ _| ' \  #
-# /_/ \_\_||_\__|_|\___|_|_|\__\__|_||_| #
-#                                        #
-# -------------------------------------- #
-# Prevents many known factions glitches. #
-##########################################
+######################
+#
+#   ANTI GLITCH
+#
+######################
 
 # Prevents all types of Phasing or V-Clipping through full blocks.
 antiglitch-phase: true
@@ -142,7 +135,7 @@ antiglitch-enderpearls-factions: []
   #- "Rel:Recruit"
   #- "Wilderness"
   #- "SafeZone"
-  #- "WarZone"
+#- "WarZone"
 # . . . You get the idea.
 
 # Change how the list of factions will work.
@@ -157,16 +150,11 @@ antiglitch-enderpearls-factions-mode: BLACKLIST
 # This message is displayed if the user attempts to enderpearl into protected territory.
 antiglitch-enderpearls-factions-message: "&3Factions &cdoes not allow you to use enderpearls in this territory"
 
-###############################################
-#    _       _   _ _             _            #
-#   /_\  _ _| |_(_) |   ___  ___| |_ ___ _ _  #
-#  / _ \| ' \  _| | |__/ _ \/ _ \  _/ -_) '_| #
-# /_/ \_\_||_\__|_|____\___/\___/\__\___|_|   #
-#                                             #
-# ------------------------------------------- #
-# Prevents players from stealing others' loot #
-#                during PvP.                  #
-###############################################
+######################
+#
+#   ANTI STEAL
+#
+######################
 
 # Should the "Anti Looter" module be enabled?
 antilooter-enabled: false
@@ -180,15 +168,11 @@ antilooter-dropped-message: "&8[&3Mineage&6Loot&8] &cThe dropped items have been
 # This message is displayed to the user attempting to pick up protected loot.
 antilooter-protected-message: "&8[&3Mineage&6Loot&8] &cYou must wait {time} before you can pickup these items"
 
-############################################
-#   ___                              _     #
-#  / __|___ _ __  _ __  __ _ _ _  __| |___ #
-# | (__/ _ \ '  \| '  \/ _` | ' \/ _` (_-< #
-#  \___\___/_|_|_|_|_|_\__,_|_||_\__,_/__/ #
-#                                          #
-# ---------------------------------------- #
-#         Advanced command editing.        #
-############################################
+######################
+#
+#   COMMANDS
+#
+######################
 
 # Should the "Commands" module be enabled?
 commands-enabled: true
@@ -259,7 +243,7 @@ commands-modifiers:
   #    permission: "an.awesome.permission"
   #
   #    # This message is displayed if the player does not have permission.
-  #    permission-message: "&cYou do not have permission! Tell the server administrator to configure FBasics."
+  #    permission-message: "&cYou do not have permission! Tell the server administrator to configure MineageBasics."
   #
   #    # This message is displayed once the command has been successfully sent.
   #    message: "&6Teleporting . . ."
@@ -290,7 +274,7 @@ commands-modifiers:
   #
   #    # Groups enables permission based command editing. Every group inherits all modifiers from the section above and
   #    # all groups which have a lower weight. Any variables in the first section can be overridden by these groups,
-  #    # barring "regex", "priority" and "groups". FBasics will attempt to hook into your permissions plugin and check
+  #    # barring "regex", "priority" and "groups". MineageBasics will attempt to hook into your permissions plugin and check
   #    # the rank name the user is in. If a player is in the rank "member", the member group will be used.
   #    groups:
   #      member:
@@ -304,12 +288,12 @@ commands-modifiers:
   #        price: 2.50
 
   safepromote:
-    regex: "/(?!s($| ))(|fbasics:)(|f(b|(|action)basics) )s(|p|afepromote)(| .*)"
-    alias: "/fbasics safepromote %2+"
+    regex: "/(?!s($| ))(|mineagebasics:)(|f(b|(|action)basics) )s(|p|afepromote)(| .*)"
+    alias: "/mineagebasics safepromote %2+"
 
   wilderness:
-    regex: "/(?!w($| ))(|fbasics:)(|f(b|(|action)basics) )w(|ild(|erness))(| .*)"
-    alias: "/fbasics wilderness"
+    regex: "/(?!w($| ))(|mineagebasics:)(|f(b|(|action)basics) )w(|ild(|erness))(| .*)"
+    alias: "/mineagebasics wilderness"
     cooldown: 300
     warmup: 5
     warmup-cancel-on-damage: true
@@ -317,22 +301,18 @@ commands-modifiers:
 
   remove-colons:
     regex: "/\\w+:.*"
-    permission: "fbasics.commands.remove-colons"
+    permission: "mineagebasics.commands.remove-colons"
     permission-message: "&c&l[!] &cThat command does not exist"
 
-#####################################################
-#  ___        __     ___                   _        #
-# / __| __ _ / _|___| _ \_ _ ___ _ __  ___| |_ ___  #
-# \__ \/ _` |  _/ -_)  _/ '_/ _ \ '  \/ _ \  _/ -_) #
-# |___/\__,_|_| \___|_| |_| \___/_|_|_\___/\__\___| #
-#                                                   #
-# ------------------------------------------------- #
-#    A secure method of promoting players after     #
-#               switching web-stores.               #
-#####################################################
+######################
+#
+#   SAFE PROMOTE
+#
+######################
+
 # * Safe Promote requires Vault to be enabled.
 # * Safe Promote works by checking if the player has the "previous group" before attempting to promote.
-# * To use, execute: "/fbasics safepromote <name> <old_group> <new_group>"
+# * To use, execute: "/mineagebasics safepromote <name> <old_group> <new_group>"
 
 # Should the "Safe Promote" module be enabled?
 safepromote-enabled: false
@@ -350,17 +330,14 @@ safepromote-success-commands:
   - "manuadd {name} {new_group}"
   - "mail send {name} Thank you for supporting the server"
 
-################################################
-#  __      ___ _    _                          #
-#  \ \    / (_) |__| |___ _ _ _ _  ___ ______  #
-#   \ \/\/ /| | / _` / -_) '_| ' \/ -_|_-<_-<  #
-#    \_/\_/ |_|_\__,_\___|_| |_||_\___/__/__/  #
-#                                              #
-# -------------------------------------------- #
-#  Teleport to a random position in the world. #
-################################################
+######################
+#
+#   WILDERNESS TP
+#
+######################
+
 # * Wilderness is designed to teleport players into a random location in the world, away from faction territory.
-# * To use, execute: "/fbasics wilderness"
+# * To use, execute: "/mineagebasics wilderness"
 
 # Should the "Wilderness" module be enabled?
 wilderness-enabled: true
