@@ -202,7 +202,7 @@ commands-cannot-afford-message: "&c&l[!] &cYou do not have sufficient funds"
 # This message is displayed when the player is on a command cooldown.
 commands-cooldown-message: "&c&l[!] &cWait {time} before you use that command again"
 
-# This message is displayed when the player has started a command warmup.     <<< make this appear on top of the second msg
+# This message is displayed when the player has started a command warmup.
 commands-warmup-start-message: "&c&l[!] &6Teleporting..."
 
 # This message is displayed when the player repeats a warming up command.
