@@ -8,9 +8,9 @@ softdepend: [Vault, Factions, MassiveCore, MVdWPlaceholderAPI]
 commands:
   mineagebasics:
     description: "FBasics' core command."
-    usage: "§cUSAGE: /mineagebasics <reload|version|safepromote|wilderness>"
+    usage: "§cUSAGE: /mineagebasics wilderness"
     permission: fbasics.user
-    permission-message: "§cYou do not have permission to use that command."
+    permission-message: "§cInsufficient Permission."
 
 permissions:
   fbasics.user:
