@@ -327,7 +327,6 @@ public final class CommandListener implements Listener {
 
     private boolean hasMoved(Location previous, Location current) {
         return previous.getBlockX() != current.getBlockX() ||
-                previous.getBlockY() != current.getBlockY() ||
                 previous.getBlockZ() != current.getBlockZ();
     }
 
