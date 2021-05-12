@@ -103,7 +103,7 @@ public final class CommandListener implements Listener {
         }
 
         // Create then execute the command modifier event.
-        CommandModifierEvent modifierEvent = new CommandModifierEvent(player, groupSettings, modifier, event.getMessage());
+        CommandModifierEvent modifierEvent = new CommandModifierEvent(player, groupSettings, modifier, event.getMessage(), true);
         Bukkit.getPluginManager().callEvent(modifierEvent);
 
         // Replace the message with what message returned.
@@ -259,14 +259,26 @@ public final class CommandListener implements Listener {
         event.setCommand(command);
     }
 
+    public static boolean currentlyInWarmup = false;
+
     @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
     public void createWarmup(CommandModifierEvent event) {
         // Do nothing if player has permission.
         Player player = event.getPlayer();
         if (player.hasPermission(Perm.Commands.WARMUPS)) return;
 
+        if (event.isCreatedInListener())
+            MessageUtils.sendMessage(player, plugin.getSettings().getCommandSettings().getWarmupStartMessage()
+                    .replace("{time}", "" + DurationUtils.format(event.getSettings().getWarmup()))
+                    .replace("{command}", event.getCommand()));
         // Do nothing if modifier has no warmup.
-        if (event.getSettings().getWarmup() <= 0) return;
+        if (event.getSettings().getWarmup() <= 0) {
+            currentlyInWarmup = false;
+            return;
+        }
+        currentlyInWarmup = true;
+        if (event.isCreatedInListener())
+            MessageUtils.sendMessage(player, plugin.getSettings().getWildernessSettings().getSearchMessage());
 
         // Check if modifier already has an active task.
         CommandModifier modifier = event.getModifier();
@@ -283,9 +295,7 @@ public final class CommandListener implements Listener {
         }
 
         // Send the player the warmup message and start the warmup.
-        MessageUtils.sendMessage(player, plugin.getSettings().getCommandSettings().getWarmupStartMessage()
-                .replace("{time}", "" + DurationUtils.format(event.getSettings().getWarmup()))
-                .replace("{command}", event.getCommand()));
+
         modifier.setTask(new CommandWarmupTask(plugin, event.getPlayer(), event.getSettings(), modifier, event.getCommand()));
         modifier.setWarmup(System.currentTimeMillis() + event.getSettings().getWarmup());
         event.setCancelled(true);

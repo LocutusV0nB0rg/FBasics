@@ -19,11 +19,14 @@ public final class CommandModifierEvent extends PlayerEvent implements Cancellab
 
     private String command;
 
-    public CommandModifierEvent(Player player, CommandModifierGroupSettings settings, CommandModifier modifier, String command) {
+    private boolean createdInListener;
+
+    public CommandModifierEvent(Player player, CommandModifierGroupSettings settings, CommandModifier modifier, String command, boolean createdInListener) {
         super(player);
         this.settings = settings;
         this.modifier = modifier;
         this.command = command;
+        this.createdInListener = createdInListener;
     }
 
     public static HandlerList getHandlerList() {
@@ -61,4 +64,7 @@ public final class CommandModifierEvent extends PlayerEvent implements Cancellab
         this.command = command;
     }
 
+    public boolean isCreatedInListener() {
+        return createdInListener;
+    }
 }

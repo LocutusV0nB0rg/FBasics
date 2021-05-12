@@ -58,7 +58,7 @@ public final class CommandWarmupTask implements Runnable {
         running = false;
 
         // Create then execute the command modifier event.
-        CommandModifierEvent event = new CommandModifierEvent(player, settings, modifier, command);
+        CommandModifierEvent event = new CommandModifierEvent(player, settings, modifier, command, false);
         Bukkit.getPluginManager().callEvent(event);
 
         // Replace the message with what message returned.

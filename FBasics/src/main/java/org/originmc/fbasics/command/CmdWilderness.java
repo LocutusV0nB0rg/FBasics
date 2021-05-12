@@ -51,7 +51,7 @@ public final class CmdWilderness extends CommandExecutor {
         }
 
         // Create a new wilderness task.
-        MessageUtils.sendMessage(player, settings.getSearchMessage());
+
         new WildernessTask(plugin, player, world, worldSettings);
         return true;
     }

@@ -3,6 +3,7 @@ package org.originmc.fbasics.task;
 import lombok.Data;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.originmc.fbasics.listener.CommandListener;
 import org.originmc.fbasics.settings.Settings;
 import org.originmc.fbasics.settings.WildernessSettings;
 import org.originmc.fbasics.util.MessageUtils;
@@ -20,12 +21,14 @@ public final class WildernessTeleportTask implements Runnable {
     public void run() {
         player.teleport(location);
 
-        // Inform the player the teleportation was a success.
-        MessageUtils.sendMessage(player, settings.getSuccessMessage()
-                .replace("{x}", "" + location.getBlockX())
-                .replace("{y}", "" + location.getBlockY())
-                .replace("{z}", "" + location.getBlockZ())
-                .replace("{world}", location.getWorld().getName()));
+
+        if (CommandListener.currentlyInWarmup)
+            // Inform the player the teleportation was a success.
+            MessageUtils.sendMessage(player, settings.getSuccessMessage()
+                    .replace("{x}", "" + location.getBlockX())
+                    .replace("{y}", "" + location.getBlockY())
+                    .replace("{z}", "" + location.getBlockZ())
+                    .replace("{world}", location.getWorld().getName()));
     }
 
 }
