@@ -36,7 +36,7 @@ public abstract class CommandExecutor {
     public boolean execute() {
         // Do nothing if the sender does not have permission.
         if (!(sender instanceof ConsoleCommandSender) && !sender.hasPermission(permission)) {
-            sender.sendMessage(ChatColor.RED + "You do not have permission.");
+            sender.sendMessage(ChatColor.RED + "Insufficient Permission");
             return true;
         }
 
