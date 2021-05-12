@@ -7,7 +7,7 @@ import static org.bukkit.ChatColor.*;
 
 public final class CmdReload extends CommandExecutor {
 
-    public static final String RELOAD_MESSAGE = GOLD + "FBASICS " + DARK_GRAY + "// " + WHITE + "Reloaded configuration and dependencies in {time}ms";
+    public static final String RELOAD_MESSAGE = GOLD + "MINEAGEBASICS" + DARK_GRAY + "// " + WHITE + "Reloaded configuration and dependencies in {time}ms";
 
     public CmdReload(FBasics plugin, CommandSender sender, String[] args, String permission) {
         super(plugin, sender, args, permission);

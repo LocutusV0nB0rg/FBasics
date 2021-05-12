@@ -1,4 +1,4 @@
-name: ${project.artifactId}
+name: MineageBasics
 main: org.originmc.fbasics.FBasics
 version: ${project.version}
 description: ${project.description}
@@ -8,7 +8,7 @@ softdepend: [Vault, Factions, MassiveCore, MVdWPlaceholderAPI]
 commands:
   mineagebasics:
     description: "FBasics' core command."
-    usage: "§cUSAGE: /fbasics <reload|version|safepromote|wilderness>"
+    usage: "§cUSAGE: /mineagebasics <reload|version|safepromote|wilderness>"
     permission: fbasics.user
     permission-message: "§cYou do not have permission to use that command."
 

@@ -23,7 +23,7 @@
         <filtering>true</filtering>
       </resource>
     </resources>
-    <finalName>FBasics</finalName>
+    <finalName>MineageBasics</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

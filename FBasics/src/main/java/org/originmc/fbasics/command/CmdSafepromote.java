@@ -14,7 +14,7 @@ import static org.bukkit.ChatColor.YELLOW;
 
 public final class CmdSafepromote extends CommandExecutor {
 
-    private static final String INCORRECT_MESSAGE = RED + "USAGE: /fbasics safepromote <user> <old-rank> <new-rank>";
+    private static final String INCORRECT_MESSAGE = RED + "USAGE: /mineagebasics safepromote <user> <old-rank> <new-rank>";
 
     private static final String INVALID_PLAYER = RED + "Cannot find the player {name}!";
 
