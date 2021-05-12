@@ -7,7 +7,7 @@
 # ------------------------------------------------ #
 #  Supplies features most faction servers require. #
 ####################################################
-# * Version ${project.version} by Sudzzy.
+# * Version 2.1.8 by DebuffPvP
 # * Set any messages in this configuration to "" to display nothing.
 
 # Version of the config file. Do not change this.
@@ -53,7 +53,7 @@ antiglitch-dismount-clipping: true
 antiglitch-nether-roof: true
 
 # This message is displayed to the user when they attempt to go above the nether.
-antiglitch-nether-roof-message: "&cAction cancelled due to the destination being above the nether roof."
+antiglitch-nether-roof-message: "&c&l[!] &cYou are not allowed to glitch above the nether"
 
 # Prevents dispensers dispensing bonemeal. This is an intended vanilla feature, but can be very over powered.
 antiglitch-bonemeal-dispensers: false
@@ -77,7 +77,7 @@ antiglitch-mcmmo-mining-blocks:
   - GLOWSTONE
   - NETHERRACK
   - PACKED_ICE
-  #- SLIME_BLOCK
+  - SLIME_BLOCK
 
 # Prevents players duplicating items by destroying inventory holders. https://www.youtube.com/watch?v=WMio2fyxKnY
 antiglitch-inventory-dupe: true
@@ -86,7 +86,7 @@ antiglitch-inventory-dupe: true
 antiglitch-crop-dupe: true
 
 # This message is displayed if the user attempts to place a denied block near crops.
-antiglitch-crop-dupe-message: "&cPlacing this block near crops has been disabled."
+antiglitch-crop-dupe-message: "&c&l[!] &cYou are not allowed to place that block near to that crop"
 
 # All materials listed here are materials considered to be crops.
 antiglitch-crop-dupe-crop-blocks:
@@ -110,13 +110,13 @@ antiglitch-crop-dupe-deny-blocks:
 antiglitch-book-limit: 50
 
 # This message is displayed if a user attempts to create a book which exceeds the limit.
-antiglitch-book-limit-message: "&cBooks are limited to {limit} pages."
+antiglitch-book-limit-message: "&c&l[!] &cBooks are limited to {limit} pages"
 
 # Prevents players being able to throw an enderpearl if they are halfway inside a solid block.
 antiglitch-enderpearls-disable-within-block: true
 
 # This message is displayed if the user attempts to enderpearl whilst within a block.
-antiglitch-enderpearls-disable-within-block-message: "&cEnderpearls are disabled whilst within a block."
+antiglitch-enderpearls-disable-within-block-message: "&c&l[!] &cYou are not allowed to block glitch"
 
 # Prevents players being able to exploit Minecrafts' default faulty enderpearl teleportation calculation.
 antiglitch-enderpearls-correct-teleport: true
@@ -125,10 +125,10 @@ antiglitch-enderpearls-correct-teleport: true
 antiglitch-enderpearls-cooldown: 15
 
 # This message is displayed if the user attempts to enderpearl while on a cooldown.
-antiglitch-enderpearls-cooldown-message: "&eWait &d{time} &ebefore throwing your next enderpearl."
+antiglitch-enderpearls-cooldown-message: "&c&l[!] &cWait {time} before you can use that again"
 
 # This message is displayed if the user attempts to enderpearl while another enderpearl is already being thrown.
-antiglitch-enderpearls-multiple-message: "&eWait for your first enderpearl to land."
+antiglitch-enderpearls-multiple-message: "&c&l[!] &cYou must wait for your pearl to land"
 
 # Adds a cooldown for throwing enderpearls once opening a door.
 antiglitch-enderpearls-door-cooldown: 2
@@ -143,7 +143,7 @@ antiglitch-enderpearls-factions: []
   #- "Wilderness"
   #- "SafeZone"
   #- "WarZone"
-  # . . . You get the idea.
+# . . . You get the idea.
 
 # Change how the list of factions will work.
 # WHITELIST will allow the command when executed within the specified regions and deny everywhere else.
@@ -155,7 +155,7 @@ antiglitch-enderpearls-factions: []
 antiglitch-enderpearls-factions-mode: BLACKLIST
 
 # This message is displayed if the user attempts to enderpearl into protected territory.
-antiglitch-enderpearls-factions-message: "&cEnderpearl was cancelled due to being within protected territory."
+antiglitch-enderpearls-factions-message: "&3Factions &cdoes not allow you to use enderpearls in this territory"
 
 ###############################################
 #    _       _   _ _             _            #
@@ -169,16 +169,16 @@ antiglitch-enderpearls-factions-message: "&cEnderpearl was cancelled due to bein
 ###############################################
 
 # Should the "Anti Looter" module be enabled?
-antilooter-enabled: true
+antilooter-enabled: false
 
 # Duration in seconds to protect the loot for.
 antilooter-duration: 15
 
 # This message is displayed to the attacker once they have killed someone.
-antilooter-dropped-message: "&eDropped items have been protected for &d{time}&e."
+antilooter-dropped-message: "&8[&3Mineage&6Loot&8] &cThe dropped items have been protected for {time}"
 
 # This message is displayed to the user attempting to pick up protected loot.
-antilooter-protected-message: "&eWait &d{time} &ebefore you can pick up this loot."
+antilooter-protected-message: "&8[&3Mineage&6Loot&8] &cYou must wait {time} before you can pickup these items"
 
 ############################################
 #   ___                              _     #
@@ -194,114 +194,114 @@ antilooter-protected-message: "&eWait &d{time} &ebefore you can pick up this loo
 commands-enabled: true
 
 # This message is displayed when the player has successfully paid for a command.
-commands-paid-message: "&ePaid for the command with &d${amount}&e."
+commands-paid-message: "&c&l[!] &6${amount} has been taken from your account"
 
 # This message is displayed when the player can not afford a command.
-commands-cannot-afford-message: "&cYou cannot afford this command as it costs &b${amount}&e."
+commands-cannot-afford-message: "&c&l[!] &cYou do not have sufficient funds"
 
 # This message is displayed when the player is on a command cooldown.
-commands-cooldown-message: "&eWait &d{time} &ebefore executing &2{command}&e."
+commands-cooldown-message: "&c&l[!] &cWait {time} before you use that command again"
 
-# This message is displayed when the player has started a command warmup.
-commands-warmup-start-message: "&eExecuting &2{command} &ein &d{time} &e. . ."
+# This message is displayed when the player has started a command warmup.     <<< make this appear on top of the second msg
+commands-warmup-start-message: "&c&l[!] &6Teleporting..."
 
 # This message is displayed when the player repeats a warming up command.
-commands-warmup-duplicate-message: "&cAlready waiting for this command to warmup."
+commands-warmup-duplicate-message: "&c&l[!] &cYou are already teleporting to the wilderness"
 
 # This message is displayed when the player moves or is hit under a warmup.
-commands-warmup-failed-message: "&cCommand warmup has been cancelled."
+commands-warmup-failed-message: "&c&l[!] &cPending teleportation request cancelled"
 
 # This message is displayed when the player executes a command in a disallowed territory.
-commands-faction-message: "&cCannot execute &b{command} &cwithin this factions' territory."
+commands-faction-message: "&3Factions &cdoes not allow you to use /wild in this territory"
 
 # All modified command should be listed here. Please take some time to learn RegEx before using.
 commands-modifiers:
 
-#  # This is the command modifier name, it can be changed to whatever you want. Feel free to add as many command
-#  # modifiers as you please. Just be sure that the command modifier names are all different from one another.
-#  tutorial:
-#    # RegEx is used in order to check if this is the correct command modifier to use.
-#    regex: "/(|essentials:)(|e)home(| .*)"
-#
-#    # Priority of the command modifiers listed under this key.
-#    # Supports: LOWEST, LOW, NORMAL, HIGH, HIGHEST and MONITOR.
-#    priority: NORMAL
-#
-#    # Alias can be used to change the command into something completely different. This can support for changing where
-#    # the arguments will show up in the newly executed command.
-#    #
-#    # Example:
-#    # A player executes the command "/ehome base".
-#    # %0 = "ehome"
-#    # %1 = "base"
-#    # %0+ = "ehome base"
-#    # %1+ = "base"
-#    #
-#    # This here would change the command "/ehome base" to "/home base".
-#    alias: "/home %1+"
-#
-#    # Duration in seconds to prevent the user from typing this command again.
-#    cooldown: 5
-#
-#    # Duration in seconds to wait before the command warmups up.
-#    warmup: 2
-#
-#    # Cancels the warmup if the player takes damage.
-#    warmup-cancel-on-damage: true
-#
-#    # Cancels the warmup if the player moves.
-#    warmup-cancel-on-move: true
-#
-#    # Price of the command.
-#    price: 10.0
-#
-#    # Perm required to execute the command.
-#    permission: "an.awesome.permission"
-#
-#    # This message is displayed if the player does not have permission.
-#    permission-message: "&cYou do not have permission! Tell the server administrator to configure FBasics."
-#
-#    # This message is displayed once the command has been successfully sent.
-#    message: "&6Teleporting . . ."
-#
-#    # Faction names and relations to determine whether or not the player is allowed to execute the command in this
-#    # specific region.
-#    #
-#    # Supports: Leader, Officer, Member, Recruit, Ally, Truce, Neutral and Enemy.
-#    factions:
-#      - "Rel:Truce"
-#      - "Rel:Ally"
-#      - "Rel:Recruit"
-#      - "Rel:Member"
-#      - "Rel:Officer"
-#      - "Rel:Leader"
-#      - "SafeZone"
-#      - "WarZone"
-#      - "Wilderness"
-#
-#    # Change how the list of factions will work.
-#    # WHITELIST will allow the command when executed within the specified regions and deny everywhere else.
-#    # BLACKLIST will deny the command when exectued within the specified regions and allow everywhere else.
-#    #
-#    # Not settings this variable will default to BLACKLIST.
-#    #
-#    # Supports: WHITELIST and BLACKLIST.
-#    factions-mode: WHITELIST
-#
-#    # Groups enables permission based command editing. Every group inherits all modifiers from the section above and
-#    # all groups which have a lower weight. Any variables in the first section can be overridden by these groups,
-#    # barring "regex", "priority" and "groups". FBasics will attempt to hook into your permissions plugin and check
-#    # the rank name the user is in. If a player is in the rank "member", the member group will be used.
-#    groups:
-#      member:
-#        weight: 10
-#        price: 5.0
-#        cooldown: 0
-#
-#      # Due to group "member" having a lower weight, group "donor" inherits the cooldown of 0 seconds.
-#      donor:
-#        weight: 20
-#        price: 2.50
+  #  # This is the command modifier name, it can be changed to whatever you want. Feel free to add as many command
+  #  # modifiers as you please. Just be sure that the command modifier names are all different from one another.
+  #  tutorial:
+  #    # RegEx is used in order to check if this is the correct command modifier to use.
+  #    regex: "/(|essentials:)(|e)home(| .*)"
+  #
+  #    # Priority of the command modifiers listed under this key.
+  #    # Supports: LOWEST, LOW, NORMAL, HIGH, HIGHEST and MONITOR.
+  #    priority: NORMAL
+  #
+  #    # Alias can be used to change the command into something completely different. This can support for changing where
+  #    # the arguments will show up in the newly executed command.
+  #    #
+  #    # Example:
+  #    # A player executes the command "/ehome base".
+  #    # %0 = "ehome"
+  #    # %1 = "base"
+  #    # %0+ = "ehome base"
+  #    # %1+ = "base"
+  #    #
+  #    # This here would change the command "/ehome base" to "/home base".
+  #    alias: "/home %1+"
+  #
+  #    # Duration in seconds to prevent the user from typing this command again.
+  #    cooldown: 5
+  #
+  #    # Duration in seconds to wait before the command warmups up.
+  #    warmup: 2
+  #
+  #    # Cancels the warmup if the player takes damage.
+  #    warmup-cancel-on-damage: true
+  #
+  #    # Cancels the warmup if the player moves.
+  #    warmup-cancel-on-move: true
+  #
+  #    # Price of the command.
+  #    price: 10.0
+  #
+  #    # Perm required to execute the command.
+  #    permission: "an.awesome.permission"
+  #
+  #    # This message is displayed if the player does not have permission.
+  #    permission-message: "&cYou do not have permission! Tell the server administrator to configure FBasics."
+  #
+  #    # This message is displayed once the command has been successfully sent.
+  #    message: "&6Teleporting . . ."
+  #
+  #    # Faction names and relations to determine whether or not the player is allowed to execute the command in this
+  #    # specific region.
+  #    #
+  #    # Supports: Leader, Officer, Member, Recruit, Ally, Truce, Neutral and Enemy.
+  #    factions:
+  #      - "Rel:Truce"
+  #      - "Rel:Ally"
+  #      - "Rel:Recruit"
+  #      - "Rel:Member"
+  #      - "Rel:Officer"
+  #      - "Rel:Leader"
+  #      - "SafeZone"
+  #      - "WarZone"
+  #      - "Wilderness"
+  #
+  #    # Change how the list of factions will work.
+  #    # WHITELIST will allow the command when executed within the specified regions and deny everywhere else.
+  #    # BLACKLIST will deny the command when exectued within the specified regions and allow everywhere else.
+  #    #
+  #    # Not settings this variable will default to BLACKLIST.
+  #    #
+  #    # Supports: WHITELIST and BLACKLIST.
+  #    factions-mode: WHITELIST
+  #
+  #    # Groups enables permission based command editing. Every group inherits all modifiers from the section above and
+  #    # all groups which have a lower weight. Any variables in the first section can be overridden by these groups,
+  #    # barring "regex", "priority" and "groups". FBasics will attempt to hook into your permissions plugin and check
+  #    # the rank name the user is in. If a player is in the rank "member", the member group will be used.
+  #    groups:
+  #      member:
+  #        weight: 10
+  #        price: 5.0
+  #        cooldown: 0
+  #
+  #      # Due to group "member" having a lower weight, group "donor" inherits the cooldown of 0 seconds.
+  #      donor:
+  #        weight: 20
+  #        price: 2.50
 
   safepromote:
     regex: "/(?!s($| ))(|fbasics:)(|f(b|(|action)basics) )s(|p|afepromote)(| .*)"
@@ -311,14 +311,14 @@ commands-modifiers:
     regex: "/(?!w($| ))(|fbasics:)(|f(b|(|action)basics) )w(|ild(|erness))(| .*)"
     alias: "/fbasics wilderness"
     cooldown: 300
-    warmup: 2
+    warmup: 5
     warmup-cancel-on-damage: true
     warmup-cancel-on-move: true
 
   remove-colons:
     regex: "/\\w+:.*"
     permission: "fbasics.commands.remove-colons"
-    permission-message: "&cPlease refrain from using colon commands."
+    permission-message: "&c&l[!] &cThat command does not exist"
 
 #####################################################
 #  ___        __     ___                   _        #
@@ -335,7 +335,7 @@ commands-modifiers:
 # * To use, execute: "/fbasics safepromote <name> <old_group> <new_group>"
 
 # Should the "Safe Promote" module be enabled?
-safepromote-enabled: true
+safepromote-enabled: false
 
 # Should the plugin attempt to auto-complete the username?
 safepromote-autocomplete: false
@@ -343,13 +343,12 @@ safepromote-autocomplete: false
 # Commands to be sent when the player fails the group check.
 safepromote-failed-commands:
   - "mail send {name} You were not a member of {old_group} so {new_group} was not added"
-  - "mail send YOUR_NAME_HERE {name} failed {old_group} to {new_group} rank check!"
+  - "mail send YOUR_NAME_HERE {name} failed {old_group} to {new_group} rank check"
 
 # Commands to be sent when the player passes the group check.
 safepromote-success-commands:
-  - "permissions player {name} addgroup {new_group}"
-  - "permissions player {name} removegroup {old_group}"
-  - "mail send {name} Thank you for supporting the server, enjoy your rank upgrade!"
+  - "manuadd {name} {new_group}"
+  - "mail send {name} Thank you for supporting the server"
 
 ################################################
 #  __      ___ _    _                          #
@@ -367,10 +366,10 @@ safepromote-success-commands:
 wilderness-enabled: true
 
 # Amount of attempts to find a safe location before giving up.
-wilderness-attempts: 100
+wilderness-attempts: 800
 
 # Distance in chunks required to be away from any factions territory. Set to -1 to disable.
-wilderness-factions-radius: 10
+wilderness-factions-radius: 5
 
 # When enabled, all factions searching will be offloaded to a different thread.
 wilderness-factions-asynchronous-search: true
@@ -379,16 +378,16 @@ wilderness-factions-asynchronous-search: true
 wilderness-default-world: world
 
 # This message is displayed when the user first sends the command.
-wilderness-search-message: "&eSearching for a random location in &2Wilderness &e. . ."
+wilderness-search-message: "&c&l[!] &6Teleportation will commence in &c5 seconds&6. Don't move."
 
 # This message is displayed when the user has successfully teleported.
-wilderness-success-message: "&eSuccessfully teleported to &d{x} {y} {z} &ein world &2{world}&e."
+wilderness-success-message: "&c&l[!] &6Teleportation commencing..."
 
 # This message is displayed when the plugin fails to find a safe location.
-wilderness-attempts-message: "&cFailed to find a safe location after &d{attempts} &cattempts. Try again!"
+wilderness-attempts-message: "&c&l[!] &cWe failed to find a safe location"
 
 # This message is displayed when the user is not in an enabled world and default is set to "none".
-wilderness-world-message: "&cThis world does not support wilderness, please go to another then try again!"
+wilderness-world-message: "&c&l[!] &cThis world does not support wilderness teleport"
 
 # Materials wilderness is not allowed to teleport the player to.
 # A full list of materials can be found here: http://goo.gl/JIs4zo
@@ -409,7 +408,7 @@ wilderness-worlds:
     center-z: 0
 
     # Maximum distance in blocks away from the center co-ordinates to teleport.
-    range: 7000
+    range: 2500
 
   example_world:
     center-x: 0
