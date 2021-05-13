@@ -17,3 +17,4 @@ out/production/
 log/
 */target/*
 !FBasics/target/FBasics.jar
+/FBasics.zip

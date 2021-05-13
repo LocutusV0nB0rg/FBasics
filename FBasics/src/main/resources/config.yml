@@ -294,7 +294,7 @@ commands-modifiers:
   wilderness:
     regex: "/(?!w($| ))(|mineagebasics:)(|mineage(b|(|action)basics) )(w|rtp)(|ild(|erness))(| .*)"
     alias: "/mineagebasics wilderness"
-    cooldown: 0
+    cooldown: 300
     warmup: 5
     warmup-cancel-on-damage: true
     warmup-cancel-on-move: true
